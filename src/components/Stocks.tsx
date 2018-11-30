@@ -11,7 +11,7 @@ import StockChart from './StockChart';
 
 const styles = (theme: any) => ({
   cardGrid: {
-    padding: `${theme.spacing.unit * 8}px 0`,
+    padding: `${theme.spacing.unit * 1}px 0`,
   },
   card: {
     height: '100%',
