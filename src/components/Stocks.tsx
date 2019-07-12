@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { withStyles } from '@material-ui/core/styles';
-import classNames from 'classnames';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
 import StockChart from './StockChart';
@@ -81,7 +79,7 @@ interface IStockResponse {
 class Stocks extends Component<any, IStockState> {
 
   private stocks = ["AAPL","MSFT","AMZN","GOOGL"];
-  private getUrl = `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${this.stocks.join(',')}&types=quote,chart&range=1d&chartInterval=5&token={apiKey}`;
+  private getUrl = `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${this.stocks.join(',')}&types=quote,chart&range=1d&chartInterval=5&token=${apiKey}`;
   
   constructor(props: any) {
     super(props);
