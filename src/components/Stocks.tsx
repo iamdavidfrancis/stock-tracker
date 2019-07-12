@@ -9,6 +9,8 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
 import StockChart from './StockChart';
 
+const apiKey = "pk_272f775f844a4aeba72a4679fd85a24c";
+
 const styles = (theme: any) => ({
   cardGrid: {
     padding: `${theme.spacing.unit * 1}px 0`,
@@ -79,7 +81,7 @@ interface IStockResponse {
 class Stocks extends Component<any, IStockState> {
 
   private stocks = ["AAPL","MSFT","AMZN","GOOGL"];
-  private getUrl = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${this.stocks.join(',')}&types=quote,chart&range=1d&chartInterval=5`;
+  private getUrl = `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${this.stocks.join(',')}&types=quote,chart&range=1d&chartInterval=5&token={apiKey}`;
   
   constructor(props: any) {
     super(props);
